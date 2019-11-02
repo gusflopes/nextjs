@@ -9,9 +9,9 @@ const Detail = ({ user }) => (
   </div>
 );
 
-Detail.getInitialProps = async () => {
+Detail.getInitialProps = async ({ query }) => {
   const response = await axios.get(
-    `https://api.github.com/users/diego3g`
+    `https://api.github.com/users/${query.user}`
   );
 
   return { user: response.data }
